@@ -1,18 +1,16 @@
-FROM python:3.9
+# Use an official Python runtime as a parent image
+FROM python:3.8
 
-COPY . .
-
-# set environment variables
+# Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-# install python dependencies
-RUN pip install --upgrade pip
-RUN pip install --no-cache-dir -r requirements.txt
+# Set the working directory
+WORKDIR /app
 
-# running migrations
-RUN python manage.py migrate
+# Install dependencies
+COPY requirements.txt /app/
+RUN pip install -r requirements.txt
 
-# gunicorn
-CMD ["gunicorn", "--config", "gunicorn-cfg.py", "core.wsgi"]
-
+# Copy the project code into the container
+COPY . /app/

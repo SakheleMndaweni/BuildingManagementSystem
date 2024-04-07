@@ -1,28 +1,23 @@
-version: '3.8'
+version: '3'
 services:
-  appseed-app:
-    container_name: appseed_app
-    restart: always
-    env_file: .env
-    build: .
-    networks:
-      - db_network
-      - web_network
-  nginx:
-    container_name: nginx
-    restart: always
-    image: "nginx:latest"
+  db:
+    image: mysql:8
     ports:
-      - "85:85"
+      - "3306:3306"
+    environment:
+      DB_HOST: db
+      MYSQL_DATABASE: sample_db
+      MYSQL_ROOT_PASSWORD: sample123  
     volumes:
-      - ./nginx:/etc/nginx/conf.d
-    networks:
-      - web_network
-    depends_on: 
-      - appseed-app
-networks:
-  db_network:
-    driver: bridge
-  web_network:
-    driver: bridge
- 
+      - /tmp/app/mysqld:/var/run/mysqld
+      - ./db:/var/lib/mysql
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - /tmp/app/mysqld:/run/mysqld
+    depends_on:
+      - db
