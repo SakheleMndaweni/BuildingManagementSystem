@@ -17,7 +17,7 @@ SECRET_KEY = 'jsandnskdsfkjdsfnnndufnjnjfdsjfudnfnnfnfdskkkj'
 DEBUG = True
 
 # load production server from .env
-ALLOWED_HOSTS = ['13.60.56.35','http://13.60.56.35']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
