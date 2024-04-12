@@ -2,43 +2,86 @@
     <div class="logo">
       <a target="_blank" rel="noopener noreferrer" 
          href="" class="simple-text logo-normal">
-         {{employee.name}} {{employee.surname}}
+         Facilities Management
       </a>
     </div>
     <div class="sidebar-wrapper">
       <ul class="nav">
       {% if request.user.is_authenticated %}
-        <li class="nav-item {% if 'buildings' in segment %} active {% endif %}">
-            <a class="nav-link" href="{% url 'buildinginformationMap' %}">
+        <li class="active nav-item" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <a class="nav-link" >
             <i class="material-icons"></i>
-            <p>Buildings</p>
+            <p>Property Management</p>
             </a>
         </li>
+       
 
-        <li class="nav-item {% if 'page-user' in segment %} active {% endif %}">
+        <li class="collapse" id="collapseExample" >
+
           <a class="nav-link" href="{% url 'employeeprofile' %}">
             <i class="material-icons"></i>
-            <p>User Profile</p>
+            <p>FM Service Desk</p>
           </a>
-        </li>
-        <li class="nav-item {% if 'boardroom' in segment %} active {% endif %}">
-          <a class="nav-link" href="{% url 'boardroombuildings' %}">
+
+          <a class="nav-link" href="">
             <i class="material-icons"></i>
-            <p>Boardrooms</p>
+            <p>Board Room Booking</p>
           </a>
-        </li>
-        <li class="nav-item {% if 'parking' in segment %} active {% endif %}">
-          <a class="nav-link" href="{% url 'parkingBuildings' %}">
+          <a class="nav-link" href="">
             <i class="material-icons"></i>
-            <p>Parkings</p>
+            <p>Lease Portfolio</p>
           </a>
-        </li>
-        <li class="nav-item {% if 'report' in segment %} active {% endif %}">
-          <a class="nav-link" href="{% url 'reportBuilding' %}">
+          <a class="nav-link" href="">
             <i class="material-icons"></i>
-            <p>Reports</p>
+            <p>Property Projects</p>
+          </a>
+          <a class="nav-link" href="">
+            <i class="material-icons"></i>
+            <p>Reporting</p>
+          </a>
+          <a class="nav-link" href="">
+            <i class="material-icons"></i>
+            <p>Municipal Service</p>
           </a>
         </li>
+
+        <li class="active nav-item"  data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+          <a class="nav-link" >
+            <i class="material-icons"></i>
+            <p>Infrastructure Management</p>
+          </a>
+        </li>
+
+        <li class="collapse" id="collapseExample2" >
+
+          <a class="nav-link" href="{% url 'employeeprofile' %}">
+            <i class="material-icons"></i>
+            <p>New Court/Renovations</p>
+          </a>
+
+          <a class="nav-link" href="">
+            <i class="material-icons"></i>
+            <p>New Buildings Projects</p>
+          </a>
+          <a class="nav-link" href="">
+            <i class="material-icons"></i>
+            <p>Renovations</p>
+          </a>
+          <a class="nav-link" href="">
+            <i class="material-icons"></i>
+            <p>Infrastructure Project Budget</p>
+          </a>
+          <a class="nav-link" href="">
+            <i class="material-icons"></i>
+            <p>AUMP</p>
+          </a>
+          <a class="nav-link" href="">
+            <i class="material-icons"></i>
+            <hr/>
+          </a>
+        </li>
+
+
         <li class="nav-item {% if 'notification' in segment %} active {% endif %}">
           <a class="nav-link" href="{% url 'notificationEmployee' %}">
             <i class="material-icons"></i>
