@@ -57,7 +57,7 @@ def employee_book_parkings_view(request,pk):
 def employee_boardrooms_view(request):
         employee = get_employee_object(request.user)
         buildings =Building.objects.all()
-        context ={'segment':'boardroom','building':buildings,'employee':employee}
+        context ={'segment':'boardroom','buildings':buildings,'employee':employee}
         return render(request, "employee/boardroom.html",context)
 
 def employee_book_boardrooms_view(request,pk):
@@ -91,6 +91,57 @@ def employee_notification(request):
         context ={'segment':'notification','employee':employee}
         return render(request, "employee/notification.html",context)
 
+def employee_lease(request):
+        employee = get_employee_object(request.user)
+        buildings = Building.objects.all()
+        context ={'segment':'lease','employee':employee,'buildings':buildings}
+        return render(request, "employee/lease.html",context)
+
+def employee_projects(request):
+        employee = get_employee_object(request.user)
+        context ={'segment':'projects','employee':employee}
+        return render(request, "employee/projects.html",context)
+
+def employee_reporting(request):
+        employee = get_employee_object(request.user)
+        context ={'segment':'reporting','employee':employee}
+        return render(request, "employee/reporting.html",context)
+
+def employee_municipal(request):
+        employee = get_employee_object(request.user)
+        context ={'segment':'municipal','employee':employee}
+        return render(request, "employee/municipal.html",context)
+
+
+def employee_court(request):
+        employee = get_employee_object(request.user)
+        context ={'segment':'court','employee':employee}
+        return render(request, "employee/court.html",context)
+
+def employee_renovations(request):
+        employee = get_employee_object(request.user)
+        context ={'segment':'renovations','employee':employee}
+        return render(request, "employee/renovations.html",context)
+
+def employee_projectbudget(request):
+        employee = get_employee_object(request.user)
+        context ={'segment':'budget','employee':employee}
+        return render(request, "employee/projectbudget.html",context)
+
+def employee_systempeporting(request):
+        employee = get_employee_object(request.user)
+        context ={'segment':'report','employee':employee}
+        return render(request, "employee/systempeporting.html",context)
+
+def employee_newbuilding(request):
+        employee = get_employee_object(request.user)
+        context ={'segment':'newbuilding','employee':employee}
+        return render(request, "employee/newbuilding.html",context)
+
+def employee_aump(request):
+        employee = get_employee_object(request.user)
+        context ={'segment':'aump','employee':employee}
+        return render(request, "employee/aump.html",context)
 
 class EmployeeApiView(APIView):
     

@@ -17,11 +17,21 @@
       </div>
       <div class="modal-body">
         <form id="newhandlerform">
-          <div class="form-group">
-            <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Report Title">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle w-100" style="background: orange;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Complaint selection
+            </button>
+            <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Water Leakage</a>
+              <a class="dropdown-item" href="#">Aircon Faulty</a>
+              <a class="dropdown-item" href="#">Other complaint</a>
+            </div>
           </div>
           <div class="form-group">
-            <textarea name="surname" class="w-100 "  rows="5" style="border-color: rgb(185, 185, 185);height: 60px;" placeholder="Report Description"></textarea>
+            <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Complaint Title (only if Other Complaint selected)">
+          </div>
+          <div class="form-group">
+            <textarea name="surname" class="w-100 "  rows="5" style="border-color: rgb(185, 185, 185);height: 60px;" placeholder="Complaint Description"></textarea>
           </div>
         
         
@@ -40,7 +50,7 @@
             <div class="col-md-12">
               <div class="card card-plain">
                 <div class="card-header card-header-primary" style="background: linear-gradient(60deg, orange, rgb(255, 199, 94));">
-                  <h4 class="card-title mt-0" style="color:rgb(83, 83, 83)">Buildings/Reports</h4>
+                  <h4 class="card-title mt-0" style="color:rgb(83, 83, 83)">Complaint Reporting Service</h4>
                   <p class="card-category">Department of Justice and Constitutional Development Buildings</p>
                 </div>
 
