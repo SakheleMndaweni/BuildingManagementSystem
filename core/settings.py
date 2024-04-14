@@ -19,7 +19,6 @@ DEBUG = True
 # load production server from .env
 ALLOWED_HOSTS = ['*']
 
-USE_I18N = True
 # Application definition
 
 INSTALLED_APPS = [
