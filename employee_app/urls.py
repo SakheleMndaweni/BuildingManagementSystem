@@ -29,5 +29,3 @@ urlpatterns = [
     path('employee/new/building/', employee_newbuilding,name='newBuilding'),
     path('employee/AUMP/', employee_aump,name='aumpservice'),
 ]
-
-urlpatterns = format_suffix_patterns(urlpatterns)
