@@ -5,9 +5,9 @@ from employee_app.views import *
 app_name = 'employee_app'
 
 urlpatterns = [
+    path("i18n/", include("django.conf.urls.i18n")),
     path('employee/', EmployeeApiView().as_view()),
     path('employee/<int:pk>/', Employee_ApiView.as_view()),
-
     path('employee/buildings/', employee_building_view,name='buildinginformationMap'),
     path('employee/buildings/<int:pk>/', employee_map_building_view, name='buildingDirectionInfor'),
     path('employee/buildings/report/', employee_reports_view, name='reportBuilding'),
