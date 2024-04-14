@@ -2,6 +2,8 @@ from django.urls import path
 from rest_framework.urlpatterns import format_suffix_patterns
 from employee_app.views import *
 
+app_name = 'employee_app'
+
 urlpatterns = [
     path('employee/', EmployeeApiView().as_view()),
     path('employee/<int:pk>/', Employee_ApiView.as_view()),
