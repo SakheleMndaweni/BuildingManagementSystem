@@ -91,7 +91,7 @@ def employee_notification(request):
         context ={'segment':'notification','employee':employee}
         return render(request, "employee/notification.html",context)
 
-def employee_lease(request):
+def employee_leaseviewFunction(request):
         employee = get_employee_object(request.user)
         buildings = Building.objects.all()
         context ={'segment':'lease','employee':employee,'buildings':buildings}
