@@ -40,15 +40,15 @@
             <i class="material-icons" ></i>
             <p>Lease Portfolio</p>
           </a>
-          <a class="nav-link" id="navlink"  href="#">
+          <a class="nav-link" id="navlink"  href="{% url 'projects' %}">
             <i class="material-icons"></i>
             <p>Property Projects</p>
           </a>
-          <a class="nav-link" id="navlink"  href="#">
+          <a class="nav-link" id="navlink"  href="{% url 'systemreporting' %}">
             <i class="material-icons"></i>
             <p>Reporting</p>
           </a>
-          <a class="nav-link" id="navlink"  href="#">
+          <a class="nav-link" id="navlink"  href="{% url 'municipalServices' %}">
             <i class="material-icons"></i>
             <p>Municipal Services</p>
           </a>
@@ -63,24 +63,24 @@
 
         <li class="collapse" id="collapseExample2" >
 
-          <a class="nav-link" id="navlink"  href="#">
+          <a class="nav-link" id="navlink"  href="{% url 'newcourt' %}">
             <i class="material-icons"></i>
             <p>New Court/Renovations</p>
           </a>
 
-          <a class="nav-link" id="navlink"  href="#" >
+          <a class="nav-link" id="navlink"  href="{% url 'projectBudget' %}" >
             <i class="material-icons"></i>
             <p>New Buildings Projects</p>
           </a>
-          <a class="nav-link" id="navlink"  href="#">
+          <a class="nav-link" id="navlink"  href="{% url 'renovationsnew' %}">
             <i class="material-icons"></i>
             <p>Renovations</p>
           </a>
-          <a class="nav-link" id="navlink"  href="#">
+          <a class="nav-link" id="navlink"  href="{% url 'projectBudget' %}">
             <i class="material-icons"></i>
             <p>Infrastructure Project Budget</p>
           </a>
-          <a class="nav-link" id="navlink"  href="#">
+          <a class="nav-link" id="navlink"  href="{% url 'reportingInfa' %}">
             <i class="material-icons"></i>
             <p>Reporting</p>
           </a>
@@ -91,7 +91,7 @@
         </li>
 
         <li class="nav-item {% if 'aump' in segment %} active {% endif %}">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="{% url 'aumpservice' %}">
             <i class="material-icons"></i>
                <p>AUMP</p>
           </a>
