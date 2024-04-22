@@ -143,6 +143,86 @@ def employee_aump(request):
         context ={'segment':'aump','employee':employee}
         return render(request, "employee/aump.html",context)
 
+
+def employee_jform(request):
+        employee = get_employee_object(request.user)
+        context ={'segment':'aump','employee':employee}
+        return render(request, "employee/jform.html",context)
+
+def employee_accomodation(request):
+        employee = get_employee_object(request.user)
+        context ={'segment':'aump','employee':employee}
+        return render(request, "employee/accomodation.html",context)
+
+def employee_tresury(request):
+        employee = get_employee_object(request.user)
+        context ={'segment':'aump','employee':employee}
+        return render(request, "employee/tresury.html",context)
+
+def employee_infrastructure(request):
+        employee = get_employee_object(request.user)
+        context ={'segment':'aump','employee':employee}
+        return render(request, "employee/infrastructure.html",context)
+
+
+def employee_standardform(request):
+        employee = get_employee_object(request.user)
+        context ={'segment':'aump','employee':employee}
+        return render(request, "employee/standardform.html",context)
+
+def employee_itc(request):
+        employee = get_employee_object(request.user)
+        context ={'segment':'aump','employee':employee}
+        return render(request, "employee/itc.html",context)
+
+def employee_security(request):
+        employee = get_employee_object(request.user)
+        context ={'segment':'aump','employee':employee}
+        return render(request, "employee/security.html",context)
+
+def employee_leaseapplication(request):
+        employee = get_employee_object(request.user)
+        context ={'segment':'aump','employee':employee}
+        return render(request, "employee/lease_application.html",context)
+
+def employee_leaseactive(request):
+        employee = get_employee_object(request.user)
+        context ={'segment':'aump','employee':employee}
+        return render(request, "employee/active_lease.html",context)
+
+def employee_leaseadjust(request):
+        employee = get_employee_object(request.user)
+        context ={'segment':'aump','employee':employee}
+        return render(request, "employee/lease_adjust.html",context)
+
+        
+
+def employee_statebuilding(request):
+        employee = get_employee_object(request.user)
+        context ={'segment':'aump','employee':employee}
+        return render(request, "employee/statebuilding.html",context)
+
+def employee_privatelease(request):
+        employee = get_employee_object(request.user)
+        context ={'segment':'aump','employee':employee}
+        return render(request, "employee/privatelease.html",context)
+
+def employee_memotemplates(request):
+        employee = get_employee_object(request.user)
+        context ={'segment':'aump','employee':employee}
+        return render(request, "employee/memotemplates.html",context)
+
+def employee_nationalincident(request):
+        employee = get_employee_object(request.user)
+        context ={'segment':'aump','employee':employee}
+        return render(request, "employee/nationalincident.html",context)
+
+def employee_securityform(request):
+        employee = get_employee_object(request.user)
+        context ={'segment':'aump','employee':employee}
+        return render(request, "employee/securityform.html",context)
+
+
 class EmployeeApiView(APIView):
     
             parser_classes = (MultiPartParser,FormParser,JSONParser)

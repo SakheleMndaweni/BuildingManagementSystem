@@ -1,0 +1,67 @@
+
+<div class="container position-sticky z-index-sticky top-0">
+    {% load static %}
+    <div class="row">
+      <div class="col-12">
+        <style>
+            .bg-gradient-info {
+                  background: linear-gradient(310deg, rgb(252, 94, 3) 0%, orange 70%);
+             }
+
+          </style>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg   blur blur-rounded top-0  z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
+          <div class="container">
+            <a class="navbar-brand  ms-lg-0  " href="/">
+                <span  class="btn btn-sm btn-round mb-0 me-1  mt--4 mb--4 "><img width="20"  height="20" src="{% static 'logo.png' %}"></img></span>
+              
+            </a>
+            <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon mt-2">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navigation">
+              <ul class="navbar-nav mx-auto">
+                <!--
+                <li class="nav-item">
+                  <a class="nav-link me-2" href="{% url 'login' %}">
+                    <i class="fas fa-key text-dark me-2"></i>
+                    Sign In
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link me-2" href="{% url 'register' %}">
+                    <i class="fas fa-user-circle text-dark me-2"></i>
+                    Sign Up
+                  </a>
+                </li>
+                  -->
+              </ul>
+              <ul class="navbar-nav d-lg-block  d-none">
+                <li class="nav-item">
+                  <a target="_blank" href="" 
+                     class="btn btn-sm btn-round mb-0 me-1 " style="color:gray"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cloud-arrow-down-fill" viewBox="0 0 16 16">
+                        <path d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2m2.354 6.854-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5a.5.5 0 0 1 1 0v3.793l1.146-1.147a.5.5 0 0 1 .708.708"/>
+                      </svg></a>
+                </li>
+              </ul>
+              <ul class="navbar-nav d-lg-block d-none">
+                <li class="nav-item">
+                  <a target="_blank" href="" 
+                     class="btn btn-sm bg-gradient-info btn-round mb-0 me-1 "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                        <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+                      </svg></a>
+                </li>
+              </ul>
+
+             
+            </div>
+          </div>
+        </nav>
+        <!-- End Navbar -->
+      </div>
+    </div>
+  </div>

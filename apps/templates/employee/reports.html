@@ -1,78 +1,53 @@
-{% extends "layouts/base_employee.html" %}
+{% extends 'layouts/base_employee.html' %}
 
-{% block title %} Department of Justice and Constitutional Development Buildings {% endblock %} 
 
-<!-- Specific Page CSS goes HERE  -->
+
+{% block title %} UI Tables {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
 
-        <div class="row">
-            <div class="col-md-12">
-              <div class="card card-plain">
-                <div class="card-header card-header-primary" style="background: linear-gradient(60deg, orange, rgb(255, 199, 94));">
-                  <h4 class="card-title mt-0" style="color:rgb(83, 83, 83)">FM Service Desk</h4>
-                  <p class="card-category">Department of Justice and Constitutional Development Buildings</p>
-                </div>
+  <div class="container-fluid py-4" style="margin-top: -100;">
 
-                <div class="card-body">
-                    <input type="text" class="form-control w-100" placeholder="Search Building">
-                    <small style="color:gray">Click on the building to report complaint</small>
-                  <div class="table-responsive">
-                    <table class="table table-hover">
-                      <thead class="">
-                        <th>
+    <div class="row">
+      <div class="col-12">
+        <div class="card mb-4">
+          <div class="card-header pb-0">
+            <h4>Complaint Form</h4>
+            <p><small>The Department of Justice and Constitutional Development</small></p>
+            <hr/>
+          </div>
+          <div class="card-body">
+            
+          </div>
 
-                          Property
-                        </th>
-                        <th>
-                          Property Address
-                        </th>
-                        <th>
-                          Property City
-                        </th>
-                        <th>
-                            Landlord
-                        </th>
-                      </thead>
-                      <tbody>
-                        {% for b in buildings %}
-                        <tr data-href="{% url 'buildingreportInformation' b.id %}">
-                          <td>
-                            {{b.name}}
-                          </td>
-                          <td>
-                            {{b.address}}, {{b.zipCode}}
-                          </td>
-                          <td>
-                            {{b.city}}
-                          </td>
-                          <td>
-                           
-                          </td>
-                        
-                        </tr>
-                        {% endfor %}
 
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+
         </div>
+      </div>
+    </div>
+ 
+
+  
+    
+  </div>
 
 {% endblock content %}
 
-<!-- Specific Page JS goes HERE  -->
+<!-- Specific JS goes HERE --> 
 {% block javascripts %}
-<script>
-      jQuery(document).ready(function($) {
-    $('*[data-href]').on('click', function() {
-        window.location = $(this).data("href");
-    });
-});
-</script>
 
+  <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+  </script>
 
 {% endblock javascripts %}

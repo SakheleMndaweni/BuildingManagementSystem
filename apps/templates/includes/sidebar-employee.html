@@ -1,131 +1,359 @@
+
+{% load static %}
 <div class="sidebar" data-color="orange" data-background-color="white" data-image="/static/assets/img/sidebar-1.jpg">
-    <div class="logo">
-      <a target="_blank" rel="noopener noreferrer" 
-         href="" class="simple-text logo-normal">
-         Facilities Management
-      </a>
-    </div>
-    <div class="sidebar-wrapper">
-      <ul class="nav">
-      {% if request.user.is_authenticated %}
-        <li class="active nav-item" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-            <a class="nav-link" >
-            <i class="material-icons"></i>
-            <p>Property Management</p>
-            </a>
-        </li>
-        <style>
-          #navlink:hover{
-             background-color: gray;
-          }
-
-
-        </style>
-      
-        <li class="collapse"  id="collapseExample" >
-
-          <a class="nav-link" id="navlink"  href="{% url 'reportBuilding' %}">
-            <i class="material-icons"></i>
-            <p>FM Service Desk</p>
-          </a>
-          <a class="nav-link"  id="navlink"  href="{% url 'parkingBuildings' %}">
-            <i class="material-icons"></i>
-            <p>Parking Booking</p>
-          </a>
-          <a class="nav-link" id="navlink"  href="{% url 'boardroombuildings' %}">
-            <i class="material-icons"></i>
-            <p>Board Room Booking</p>
-          </a>
-          <a class="nav-link" id="navlink"  href='{% url "buildingportfolio" %}'>
-            <i class="material-icons" ></i>
-            <p>Lease Portfolio</p>
-          </a>
-          <a class="nav-link" id="navlink"  href="{% url 'projects' %}">
-            <i class="material-icons"></i>
-            <p>Property Projects</p>
-          </a>
-          <a class="nav-link" id="navlink"  href="{% url 'systemreporting' %}">
-            <i class="material-icons"></i>
-            <p>Reporting</p>
-          </a>
-          <a class="nav-link" id="navlink"  href="{% url 'municipalServices' %}">
-            <i class="material-icons"></i>
-            <p>Municipal Services</p>
-          </a>
-        </li>
-
-        <li class="active nav-item"  data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
-          <a class="nav-link" >
-            <i class="material-icons"></i>
-            <p>Infrastructure Management</p>
-          </a>
-        </li>
-
-        <li class="collapse" id="collapseExample2" >
-
-          <a class="nav-link" id="navlink"  href="{% url 'newcourt' %}">
-            <i class="material-icons"></i>
-            <p>New Court/Renovations</p>
-          </a>
-
-          <a class="nav-link" id="navlink"  href="{% url 'projectBudget' %}" >
-            <i class="material-icons"></i>
-            <p>New Buildings Projects</p>
-          </a>
-          <a class="nav-link" id="navlink"  href="{% url 'renovationsnew' %}">
-            <i class="material-icons"></i>
-            <p>Renovations</p>
-          </a>
-          <a class="nav-link" id="navlink"  href="{% url 'projectBudget' %}">
-            <i class="material-icons"></i>
-            <p>Infrastructure Project Budget</p>
-          </a>
-          <a class="nav-link" id="navlink"  href="{% url 'reportingInfa' %}">
-            <i class="material-icons"></i>
-            <p>Reporting</p>
-          </a>
-          <a class="nav-link" id="navlink"  href="">
-            <i class="material-icons"></i>
-            <hr/>
-          </a>
-        </li>
-
-        <li class="nav-item {% if 'aump' in segment %} active {% endif %}">
-          <a class="nav-link" href="{% url 'aumpservice' %}">
-            <i class="material-icons"></i>
-               <p>AUMP</p>
-          </a>
-        </li>
-
-
-        <li class="nav-item {% if 'notification' in segment %} active {% endif %}">
-          <a class="nav-link" href="{% url 'notificationEmployee' %}">
-            <i class="material-icons"></i>
-            <p>Notifications</p>
-          </a>
-        </li>
-        
-        <li class="nav-item ">
-          <a class="nav-link" href="{% url 'logout' %}" >
-            <i class="material-icons"></i>
-            <p>Logout</p>
-          </a>
-        </li>
-
-
-      {% else %}
-
-        <li class="nav-item active">
-          <a class="nav-link" 
-             target="_blank" rel="noopener noreferrer"  
-             href="">
-            <i class="material-icons"></i>
-            <p>Buildings Management</p>
-          </a>
-        </li>          
-
-      {% endif %}
-      </ul>
-    </div>
-
+  <div class="logo">
+    <a  rel="noopener noreferrer" 
+       href="{% url 'buildinginformationMap' %}" class="navbar-brand simple-text logo-normal"> 
+        <img width="20" height="20" src="{% static 'logo.png' %}" alt=""> <span style="font-size:x-small;"> Facilities Management</span>
+    </a>
   </div>
+  <div class="sidebar-wrapper">
+    <ul class="nav">
+    {% if request.user.is_authenticated %}
+    <li  class="nav-item" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+      <a class="nav-link" style="background:orange;color:white;border-radius: 10px;" >
+        
+        <p> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16">
+          <path d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z"/>
+          <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1zm11 0H3v14h3v-2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V15h3z"/>
+        </svg>
+      Property Management <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+      </svg></p>
+
+      </a>
+  </li>
+  <style>
+    #navlink:hover{
+       background-color: gray;
+    }
+
+
+  </style>
+
+  <li class="collapse"  id="collapseExample" >
+
+    <a style="background:orange;color:white;border-radius: 10px;" class="nav-link" data-toggle="collapse" href="#collapseExampleservicedesk" role="button" aria-expanded="false" aria-controls="collapseExampleservicedesk">
+      <p></p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-laptop" viewBox="0 0 16 16">
+        <path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5"/>
+      </svg>
+      FM Service Desk <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+      </svg></p>
+    </a>
+
+
+      <span class="collapse" id="collapseExampleservicedesk" > 
+         <a class="nav-link" id="navlink"  href="{% url 'reportBuilding' %}" >
+      <i class="material-icons"></i>
+      <p>Complaint Form</p>
+    </a>
+     
+<hr/>
+  
+  </span>
+
+
+
+
+
+
+
+
+    <a class="nav-link"  id="navlink"  href="{% url 'parkingBuildings' %}">
+      <i class="material-icons"></i>
+      <p>Parking Booking</p>
+    </a>
+    <a class="nav-link" id="navlink"  href="{% url 'boardroombuildings' %}">
+      <i class="material-icons"></i>
+      <p>Board Room Booking</p>
+    </a>
+
+
+
+    
+
+    <a  style="background:orange;color:white;border-radius: 10px;" class="nav-link" data-toggle="collapse" href="#collapseExamplelease" role="button" aria-expanded="false" aria-controls="collapseExamplelease">
+      <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+        <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"/>
+        <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"/>
+      </svg> Lease Portfolio <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+      </svg></p>
+    </a>
+
+    <span class="collapse" id="collapseExamplelease" >
+
+    <a class="nav-link" id="navlink"  href="{% url 'leaseapplication' %}">
+      <i class="material-icons"></i>
+      <p>New Lease Application/Renewal</p>
+    </a>
+
+<a class="nav-link" id="navlink"  href="{% url 'leaseactive' %}">
+      <i class="material-icons"></i>
+      <p>Active/Expiry Lease</p>
+    </a>
+
+    <a class="nav-link" id="navlink"  href="{% url 'adjusting' %}" >
+      <i class="material-icons"></i>
+      <p>Lease Adjustment </p>
+    </a>
+
+     <a  style="background:orange;color:white;border-radius: 10px;" class="nav-link" data-toggle="collapse" href="#collapseExampleTI" role="button" aria-expanded="false" aria-controls="collapseExampleTI" >
+      <i class="material-icons"></i>
+      <p>TI/Costruction <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+      </svg></p>
+    </a>
+
+
+     <span class="collapse" id="collapseExampleTI" > 
+         <a class="nav-link" id="navlink"  href="{% url 'standard' %}" >
+      <i class="material-icons"></i>
+      <p>Standard Norms</p>
+    </a>
+     <a class="nav-link" id="navlink"  href="{% url 'itc' %}" >
+      <i class="material-icons"></i>
+      <p>ITC</p>
+    </a>
+     <a class="nav-link" id="navlink"  href="{% url 'security' %}" >
+      <i class="material-icons"></i>
+      <p>Security</p>
+    </a>
+<span class="nav-link" id="navlink"  href="">
+      <i class="material-icons"></i>
+      <hr/>
+    </span>
+
+
+     </span>
+
+
+
+
+
+
+
+
+
+
+     <a class="nav-link" id="navlink"  href="{% url 'projectBudget' %}" >
+      <i class="material-icons"></i>
+      <p>Lease Contracts</p>
+    </a>
+   
+  </span>
+
+
+    <a class="nav-link" id="navlink"  href="{% url 'projects' %}">
+      <i class="material-icons"></i>
+      <p>Property Projects</p>
+    </a>
+    <a class="nav-link" id="navlink"  href="{% url 'systemreporting' %}">
+      <i class="material-icons"></i>
+      <p>Reporting</p>
+    </a>
+    <a class="nav-link" id="navlink"  href="{% url 'municipalServices' %}">
+      <i class="material-icons"></i>
+      <p>Municipal Services</p>
+    </a>
+
+     <a class="nav-link" id="navlink"  href="{% url 'jformBuilding' %}">
+      <i class="material-icons"></i>
+      <p>JForm</p>
+    </a>
+     
+       <a class="nav-link" id="navlink"  href="{% url 'accomodationservice' %}">
+      <i class="material-icons"></i>
+      <p>Accommodation Changes </p>
+    </a>
+<a class="nav-link" id="navlink"  href="">
+      <i class="material-icons"></i>
+      <hr/>
+    </a>
+
+  </li>
+
+
+
+
+
+
+
+  <li class="nav-item"  data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+    <a class="nav-link" style="background:orange;color:white;border-radius: 10px;" >
+      <p> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-buildings" viewBox="0 0 16 16">
+        <path d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022M6 8.694 1 10.36V15h5zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5z"/>
+        <path d="M2 11h1v1H2zm2 0h1v1H4zm-2 2h1v1H2zm2 0h1v1H4zm4-4h1v1H8zm2 0h1v1h-1zm-2 2h1v1H8zm2 0h1v1h-1zm2-2h1v1h-1zm0 2h1v1h-1zM8 7h1v1H8zm2 0h1v1h-1zm2 0h1v1h-1zM8 5h1v1H8zm2 0h1v1h-1zm2 0h1v1h-1zm0-2h1v1h-1z"/>
+      </svg> Infrastructure Management <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+      </svg></p>
+    </a>
+  </li>
+
+  <li class="collapse" id="collapseExample2" >
+
+      <a  style="background:orange;color:white;border-radius: 10px;" class="nav-link" data-toggle="collapse" href="#collapseExampleCostruction" role="button" aria-expanded="false" aria-controls="collapseExampleCostruction" >
+      <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-building-check" viewBox="0 0 16 16">
+        <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514"/>
+        <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6.5a.5.5 0 0 1-1 0V1H3v14h3v-2.5a.5.5 0 0 1 .5-.5H8v4H3a1 1 0 0 1-1-1z"/>
+        <path d="M4.5 2a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-6 3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-6 3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z"/>
+      </svg> New Court/Renovations <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+      </svg></p>
+    </a>
+
+
+       <span class="collapse" id="collapseExampleCostruction" > 
+         <a class="nav-link" id="navlink"  href="{% url 'standard' %}" >
+      <i class="material-icons"></i>
+      <p>Standard Norms</p>
+    </a>
+     <a class="nav-link" id="navlink"  href="{% url 'itc' %}" >
+      <i class="material-icons"></i>
+      <p>ITC</p>
+    </a>
+     <a class="nav-link" id="navlink"  href="{% url 'security' %}" >
+      <i class="material-icons"></i>
+      <p>Security</p>
+    </a>
+<a class="nav-link" id="navlink"  href="">
+      <i class="material-icons"></i>
+      <hr/>
+    </a>
+</span>
+
+
+
+
+    <a class="nav-link" id="navlink"  href="{% url 'projectBudget' %}" >
+      <i class="material-icons"></i>
+      <p>New Buildings Projects</p>
+    </a>
+    <a class="nav-link" id="navlink"  href="{% url 'renovationsnew' %}">
+      <i class="material-icons"></i>
+      <p>Renovations</p>
+    </a>
+    <a class="nav-link" id="navlink"  href="{% url 'infrastructureProjects' %}">
+      <i class="material-icons"></i>
+      <p>Infrastructure Project Budget</p>
+    </a>
+<a class="nav-link" id="navlink"  href="{% url 'systetresury' %}">
+      <i class="material-icons"></i>
+      <p>National Treasury/ DPWI</p>
+    </a>
+    <a class="nav-link" id="navlink"  href="{% url 'reportingInfa' %}">
+      <i class="material-icons"></i>
+      <p>Reporting</p>
+    </a>
+    <a class="nav-link" id="navlink"  href="">
+      <i class="material-icons"></i>
+      <hr/>
+    </a>
+  </li>
+
+
+  <li class="nav-item" data-toggle="collapse" href="#collapseExamplenew" role="button" aria-expanded="false" aria-controls="collapseExamplenew">
+    <a class="nav-link"  style="background:orange;color:white;border-radius: 10px;">
+      <i class="material-icons"></i>
+         <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+          <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"/>
+          <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"/>
+        </svg> AUMP <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+        </svg></p>
+    </a>
+  </li>
+
+
+  <li class="collapse" id="collapseExamplenew" >
+
+    <a class="nav-link" id="navlink"  href="{% url 'stateowened' %}">
+      <i class="material-icons"></i>
+      <p>State Owned buildings</p>
+    </a>
+
+    <a class="nav-link" id="navlink"  href="{% url 'privatelease' %}" >
+      <i class="material-icons"></i>
+      <p>Private Lease</p>
+    </a>
+   
+  </li>
+
+
+  <li class="nav-item" data-toggle="collapse" href="#collapseExampl4" role="button" aria-expanded="false" aria-controls="collapseExampl4">
+    <a class="nav-link"  style="background:orange;color:white;border-radius: 10px;" >
+      <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark" viewBox="0 0 16 16">
+        <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5z"/>
+      </svg> Report Writing <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+      </svg></p>
+    </a>
+  </li>
+   <li class="collapse" id="collapseExampl4" >
+
+    <a class="nav-link" id="navlink"  href="{% url 'memotemplates' %}">
+      <i class="material-icons"></i>
+      <p>Memo Templates</p>
+    </a>
+   
+  </li>
+
+
+  <li class=" nav-item" data-toggle="collapse" href="#collapseExampl5" role="button" aria-expanded="false" aria-controls="collapseExampl5">
+    <a class="nav-link"  style="background:orange;color:white;border-radius: 10px;">
+      <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-building-fill-lock" viewBox="0 0 16 16">
+        <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7.764a3 3 0 0 0-4.989 2.497 2 2 0 0 0-.743.739H6.5a.5.5 0 0 0-.5.5V16H3a1 1 0 0 1-1-1zm2 1.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m3 0v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5"/>
+        <path d="M9 13a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1"/>
+      </svg> Security <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+      </svg></p>
+    </a>
+  </li>
+   <li class="collapse" id="collapseExampl5" >
+
+    <a class="nav-link" id="navlink"  href="{% url 'nationalincident' %}">
+      <i class="material-icons"></i>
+      <p>National Incident Register</p>
+    </a>
+
+
+      <a class="nav-link" id="navlink"  href="{% url 'securityform' %}">
+      <i class="material-icons"></i>
+      <p>Security Form</p>
+    </a>
+
+        <a class="nav-link" id="navlink"  href="{% url 'systemreporting' %}">
+      <i class="material-icons"></i>
+      <p>Report</p>
+    </a>
+   
+  </li>
+
+
+
+
+  <li class="nav-item ">
+    <a class="nav-link" href="{% url 'logout' %}" >
+      <i class="material-icons"></i>
+      <p>Logout</p>
+    </a>
+  </li>
+
+
+    {% else %}
+
+      <li class="nav-item active">
+        <a class="nav-link" 
+           target="_blank" rel="noopener noreferrer"  
+           href="">
+          <i class="material-icons"></i>
+          <p>Buildings Management</p>
+        </a>
+      </li>          
+
+    {% endif %}
+    </ul>
+  </div>
+
+</div>

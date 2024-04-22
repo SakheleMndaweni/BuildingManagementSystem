@@ -26,4 +26,26 @@ urlpatterns = [
     path('employee/reports/', employee_systempeporting,name='reportingInfa'),
     path('employee/new/building/', employee_newbuilding,name='newBuilding'),
     path('employee/AUMP/', employee_aump,name='aumpservice'),
+    path('employee/Jform/', employee_jform,name='jformBuilding'),
+    path('employee/accomodation/', employee_accomodation,name='accomodationservice'),
+    path('employee/tresury/', employee_tresury,name='systetresury'),
+    path('employee/infrastructure/', employee_infrastructure,name='infrastructureProjects'),
+    path('employee/standard/', employee_standardform,name='standard'),
+    path('employee/ITC/', employee_itc,name='itc'),
+    path('employee/security/', employee_security,name='security'),
+    path('employee/application/', employee_leaseapplication,name='leaseapplication'),
+    path('employee/active/', employee_leaseactive,name='leaseactive'),
+    path('employee/Adjusting/', employee_leaseadjust,name='adjusting'),
+
+    path('employee/state/', employee_statebuilding,name='stateowened'),
+    
+    path('employee/private/', employee_privatelease,name='privatelease'),
+    
+    path('employee/templates/', employee_memotemplates,name='memotemplates'),
+    
+    path('employee/security/', employee_securityform,name='securityform'),
+    path('employee/national/', employee_nationalincident,name='nationalincident'),
+    
+    
+    
 ]
